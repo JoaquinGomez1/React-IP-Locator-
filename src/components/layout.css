@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  position: relative;
+}
+
+.header {
+  background-color: #199900;
+  margin-bottom: 1.45rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 80px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100vw;
+}
+
+.search-btn:focus,
+.search-input:focus {
+  outline: none;
+}
+
+.search-btn {
+  background-color: rgb(5, 179, 19) !important;
+  position: relative;
+  z-index: 0;
+}
+
+.search-btn::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.search-btn:hover::before {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card {
+  padding: 20px;
+  border-radius: 3px !important;
+}
+
+.info-card {
+  background-color: rgb(67, 85, 85);
+  color: rgb(247, 252, 241);
+  text-transform: capitalize;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+.info-card > p {
+  margin: 5px 0;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+}
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.map-marker {
+  background-color: #199900 !important;
+}
+
+.loading {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  color: white;
+}
+
+.loading > * {
+  position: absolute;
+  margin-left: -180px;
+  margin-top: -20px;
+  top: 50%;
+  left: 50%;
+}
+
+.loading-child {
+  margin-bottom: -7px;
+  animation: up-and-down 4s infinite linear;
+}
+
+.active {
+  display: block !important;
+}
+
+.unmounting {
+  animation: unmount 150ms linear;
+}
+
+.disabled {
+  display: none !important;
+}
+
+@media (max-width: 730px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 100px;
+    max-width: 100vw !important;
+  }
+
+  .search-input {
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .search-input {
+    padding: 5px !important;
+  }
+}
+
+@keyframes unmount {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes up-and-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
