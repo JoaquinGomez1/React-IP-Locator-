@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../context/userIp";
 import { PositionContext } from "../context/Position";
+import "./Header.css";
 require("dotenv").config();
 
 export default function Header() {
@@ -25,50 +26,31 @@ export default function Header() {
   };
 
   return (
-    <header className="header">
-      <div style={{ padding: " 0 20px" }}>
-        <h1 href={"/"} style={{ color: "white", margin: "10px 0" }}>
-          IP LOCATOR
-        </h1>
+    <header className='header'>
+      <div className='title-container'>
+        <h1 className='title'>IP LOCATOR</h1>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
+      <div className='search-bar-container'>
         <input
           onChange={(e) => {
             setSearchInput(e.target.value);
           }}
-          className="search-input"
-          style={{
-            minWidth: "40%",
-            padding: "15px 20%",
-            textAlign: "center",
-            border: "none",
-            borderRadius: "5px 0 0 5px",
-            fontSize: "18px",
+          onKeyDown={(e) => {
+            e.key === "Enter" && fetchData();
           }}
-          placeholder="Enter an ip address"
+          className='search-input'
+          placeholder='Enter an ip address'
         />
-        <button
-          className="search-btn"
-          style={{
-            background: "#1AAA33",
-            border: "none",
-            padding: " 0 10px",
-            fontWeight: "600",
-            color: "white",
-            cursor: "pointer",
-          }}
-          onClick={fetchData}
-        >
+        <button className='search-btn' onClick={fetchData}>
           Search
         </button>
+      </div>
+      <div className='github-icon-container'>
+        <a
+          href='https://github.com/JoaquinGomez1/React-IP-Locator-'
+          target='_blank'>
+          <i class='fab fa-github'></i>
+        </a>
       </div>
     </header>
   );

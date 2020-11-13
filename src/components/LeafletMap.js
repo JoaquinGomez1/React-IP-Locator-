@@ -20,13 +20,12 @@ const LeafletMap = ({ position }) => {
     <Map center={{ lat: state.lat, lng: state.lng }} zoom={state.zoom}>
       <TileLayer
         attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
       <Marker
-        className="map-marker"
-        position={{ lat: state.lat, lng: state.lng }}
-      >
-        <Popup>Your position according to your ip address</Popup>
+        className='map-marker'
+        position={{ lat: state.lat, lng: state.lng }}>
+        <Popup>Your position according to the ip address provided</Popup>
       </Marker>
     </Map>
   );
