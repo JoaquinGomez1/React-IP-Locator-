@@ -48,6 +48,7 @@ export default function Header() {
       <div className='github-icon-container'>
         <a
           href='https://github.com/JoaquinGomez1/React-IP-Locator-'
+          rel='noopener noreferrer'
           target='_blank'>
           <i class='fab fa-github'></i>
         </a>

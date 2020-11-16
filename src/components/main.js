@@ -28,6 +28,7 @@ export default function Main() {
     };
 
     fetchData();
+    //eslint-disable-next-line
   }, [setUserData, setPosition]);
 
   return (

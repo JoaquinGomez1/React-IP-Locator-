@@ -14,6 +14,7 @@ const LeafletMap = ({ position }) => {
         lng: position[1],
       });
     }
+    //eslint-disable-next-line
   }, [position, setState]);
 
   return (
