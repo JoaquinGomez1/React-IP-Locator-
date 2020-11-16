@@ -4,7 +4,7 @@ export const PositionContext = React.createContext();
 
 export default function Position(props) {
   const [position, setPosition] = useState({
-    lat: 51.505,
+    lat: 51.505, // Default lat and lng
     lng: -0.09,
     zoom: 15,
     isDefaultPos: true,

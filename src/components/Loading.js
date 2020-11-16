@@ -20,9 +20,7 @@ export default function Loading() {
       loadingComp.current.className = "loading " + unmounting;
       setTimeout(
         300,
-        (() => {
-          loadingComp.current.className = "loading " + disabled;
-        })()
+        (() => (loadingComp.current.className = "loading " + disabled))()
       );
     }
   }, [position]);
